@@ -1,3 +1,7 @@
 var titleCase = function(sentence) {
-  return sentence[0].toUpperCase() + sentence.slice(1);
+  var answer = []
+  sentence.split(" ").forEach(function(word) {
+    answer.push(word[0].toUpperCase() + word.slice(1));
+  });
+  return answer.join(" ");
 };
