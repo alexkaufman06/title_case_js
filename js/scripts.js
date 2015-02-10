@@ -14,3 +14,14 @@ var titleCase = function(sentence) {
   });
   return answer.join(" ");
 };
+
+$(document).ready(function() {
+  $("form#title-case").submit(function(event) {
+    var titleInput = $("input#title-input").val();
+    var result = titleCase(titleInput);
+
+    $(".title-output").text(result);
+
+    event.preventDefault();
+  });
+});
