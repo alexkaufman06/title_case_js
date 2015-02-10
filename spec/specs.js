@@ -10,4 +10,12 @@ describe("titleCase", function() {
   it("accepts any form of capitalization and returns correct form", function() {
     expect(titleCase("cAt HAT")).to.equal("Cat Hat");
   });
+
+  it("avoids capitalizing a special list of conjunctions and articles", function() {
+    expect(titleCase("cat in the hat")).to.equal("Cat in the Hat");
+  });
+
+  it("will always capitalize the first word", function() {
+    expect(titleCase("the dog spot")).to.equal("The Dog Spot");
+  });
 });
